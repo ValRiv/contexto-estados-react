@@ -4,7 +4,7 @@ import Panel from "./Panel";
 
 export default function Form({ children }) {
     return (
-      <Panel title="Bievenido/a!!">
+      <Panel title="Bienvenido/a!!">
         <LoginButton />
       </Panel>
     );

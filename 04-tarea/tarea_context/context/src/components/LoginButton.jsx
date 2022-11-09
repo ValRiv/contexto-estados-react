@@ -1,21 +1,20 @@
-
+import {useContext} from 'react';
 import Button from './Button'
-
-
-// Importe CurrentUserContext y useContext desde App, desestructure el objeto para usar currentUser y
-// setCurrentUser
+import {CurrentUserContext} from '../App'
 
 export default function LoginButton() {
- 
-// escriba su código aquí y descomente a partir de la linea 12
+    const {
+      currentUser,
+      setCurrentUser
+    } = useContext(CurrentUserContext);
 
-    // if (currentUser !== null) {
-    //   return <p>Hola {currentUser.name}, te esperabamos.</p>;
-    // }
+    if (currentUser !== null) {
+      return <p>Hola {currentUser.name}, te esperabamos.</p>;
+    }
   
-    // return (
-    //   <Button onClick={() => {
-    //     setCurrentUser( {name:"Diego Simonelli"} )
-    //   }}>Log in</Button>
-    // );
+    return (
+      <Button onClick={() => {
+        setCurrentUser( {name:"Diego Simonelli"} )
+      }}>Log in</Button>
+    );
   }
